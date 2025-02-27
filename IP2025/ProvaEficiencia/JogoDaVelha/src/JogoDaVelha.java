@@ -14,34 +14,34 @@ public class JogoDaVelha {
         boolean pcGanhou = false;
         boolean vezDoJogador = new Random().nextBoolean();
 
-            jogoMapa.limpaMapa();
-            for (rodada = 0; rodada < 9; rodada++) {
-
-                jogoMapa.desenha(rodada);
-
-                if (vezDoJogador) {
-                    jogadorGanhou = jogoJogador.joga(teclado);
-                } else {
-                    pcGanhou = jogoPc.joga();
-                }
-
-                if (jogadorGanhou || pcGanhou) {
-                    break;
-                }
-
-                vezDoJogador = !vezDoJogador;
-
-            }
+        jogoMapa.limpaMapa();
+        for (rodada = 0; rodada < 9; rodada++) {
 
             jogoMapa.desenha(rodada);
 
-            if(jogadorGanhou) {
-                System.out.println(" ...JOGADOR GANHOU!!");
-            } else if (pcGanhou) {
-                System.out.println(" ...PC GANHOU!!");
+            if (vezDoJogador) {
+                jogadorGanhou = jogoJogador.joga(teclado);
             } else {
-                System.out.println("... EMPATOU!");
+                pcGanhou = jogoPc.joga();
             }
+
+            if (jogadorGanhou || pcGanhou) {
+                break;
+            }
+
+            vezDoJogador = !vezDoJogador;
+
+        }
+
+        jogoMapa.desenha(rodada);
+
+        if (jogadorGanhou) {
+            System.out.println(" ...JOGADOR GANHOU!!");
+        } else if (pcGanhou) {
+            System.out.println(" ...PC GANHOU!!");
+        } else {
+            System.out.println("... EMPATOU!");
+        }
 
 
     }

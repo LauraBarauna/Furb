@@ -1,10 +1,10 @@
 public class JogoDaVelha_Mapa {
-    
+
     private char[][] mapa;
 
     public int sortear(int inicio, int fim) {
         int range = fim - inicio + 1;
-        int rand = (int)(Math.random() * range) + inicio;
+        int rand = (int) (Math.random() * range) + inicio;
         return rand;
     }
 
