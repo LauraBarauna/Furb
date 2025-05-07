@@ -5,7 +5,7 @@ public class Exercicio20 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite a massa inicial em KG: ");
         double kg = sc.nextDouble();
-        
+
         int segundos = 0;
 
         System.out.println("Massa inicial: " + kg + " kg");
